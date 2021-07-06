@@ -1523,7 +1523,7 @@ function DiscordLib:Window(text,co)
 					wait(.5)
 					Discord.Enabled = false
 				else
-					MainFrame:TweenSize(UDim2.new(0, 706, 0, 450), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+					MainFrame:TweenSize(UDim2.new(0, 680, 0, 420), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
 					Discord.Enabled = true
 					uitoggled = false
 				end

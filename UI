@@ -86,7 +86,7 @@ Discord.Name = "Discord"
 Discord.Parent = game.CoreGui
 Discord.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-function DiscordLib:Window(text)
+function DiscordLib:Window(text,co)
 	local currentservertoggled = ""
 	local minimized = false
 	local fs = false
@@ -1514,6 +1514,22 @@ function DiscordLib:Window(text)
 		end)
 		
 	end)
+		UserInputService.InputBegan:Connect(
+		function(io, p)
+			if io.KeyCode == co then
+				if uitoggled == false then
+					MainFrame:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+					uitoggled = true
+					wait(.5)
+					Discord.Enabled = false
+				else
+					MainFrame:TweenSize(UDim2.new(0, 706, 0, 484), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+					Discord.Enabled = true
+					uitoggled = false
+				end
+			end
+		end
+	)
 	
 	function DiscordLib:Notification(titletext, desctext, btntext)
 		local NotificationHolderMain = Instance.new("TextButton")

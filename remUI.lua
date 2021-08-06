@@ -1610,7 +1610,7 @@ local UIToggle
 local UnlockMouse
 function library:Init()
 	
-	self.base.Parent = game:GetService"CoreGui"
+	self = game:GetService"CoreGui"
 	
 	self.cursor = self.cursor or self:Create("Frame", {
 		ZIndex = 100,
